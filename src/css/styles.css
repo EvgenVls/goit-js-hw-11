@@ -13,12 +13,26 @@
   justify-content: center;
 }
 
-.search-field {
+#search-field {
   width: 272px;
   height: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #808080;
   border: 1px solid #808080;
   border-radius: 4px;
-  
+  padding-left: 16px;
+}
+
+#search-field:hover {
+  border-color: #000000;
+  outline: transparent;
+}
+
+#search-field:focus {
+  outline: transparent;
+  border-color: #4e75ff;
 }
 
 button {
@@ -31,4 +45,10 @@ button {
   border: none;
   border-radius: 8px;
   background: #4e75ff;
+}
+
+button:hover,
+button:focus {
+  background-color: #6c8cff;
+  outline: transparent;
 }
