@@ -1,7 +1,10 @@
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 import searchImages from './js/pixabay-api';
-import showGallery from './js/render-functions';
+import createMarcupGallery from './js/render-functions';
 
 const form = document.querySelector('.form');
+const gallery = document.querySelector('.gallery');
 
 form.addEventListener('submit', event => {
     event.preventDefault();
@@ -10,8 +13,12 @@ form.addEventListener('submit', event => {
         form.reset();
         console.log(tagImage);
         
-        searchImages(tagImage);// запуск функції для відправки запиту на пошук зображень
-        // showGallery();// запуск функції побудови галереї
+        searchImages(tagImage)
+        .then((img) => console.log(img))
+        
+        // gallery.innerHTML = createMarcupGallery(images);// showGallery();// запуск функції побудови галереї
+
+        // const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250  });
     }
     
 })
